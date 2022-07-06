@@ -1,24 +1,26 @@
-<div class="flex flex-col justify-center items-center h-screen w-full ">
-<div class="flex flex-col justify-center items-center h-5/6 w-2/3 border shadow-lg">
+<div class="flex flex-col justify-center items-center w-full min-h-screen ">
 
-<div class="flex flex-col items-center justify-center mb-4">
-	<h2 class="text-xl"><%= @todo_list.title %></h2>
-<p class="  text-gray-400"><%= @todo_list.description %></p>
-</div>
+	<div class="flex flex-col justify-center items-center w-3/4 h-5/6 max-h-screen border-2 rounded-lg shadow-lg">
+				<div class="flex flex-col items-center justify-center h-1/6">
+						<h2 class="text-xl font-bold"><%= @todo_list.title %></h2>
+						<p class="  text-gray-400 font-semibold"><%= @todo_list.description %></p>
+				</div>
 
-<div class="flex flex-col justify-center items-center h-full w-full m-2">
-	<%= render @todo_list.todo_items %>
-	<div id="2/3">
-		<%= render "todo_items/form" %>
+				<div class="flex flex-col justify-center items-center h-5/6 w-full 	">
+					<div class="flex flex-col justify-center items-center w-full h-2/3 overflow-y-scroll p-2">
+					<%= render @todo_list.todo_items %>
+					</div>
+					<div class="w-full h-1/3 mb-2">
+						<%= render "todo_items/form" %>
+					</div>
+				</div>	
 	</div>
-</div>
-
-<div class="w-1/3 m-2 flex justify-around">
-	<%= link_to 'Edit', edit_todo_list_path(@todo_list),class:"border-blue-800 border-2 px-4 transition duration-500 rounded-lg text-blue-800 hover:bg-blue-800 hover:text-white" %> |
-	<%= link_to 'Delete', todo_list_path(@todo_list), method: :delete, data: { confirm: "Are you sure?" },class:"border-red-800 border-2 px-4 transition duration-500 rounded-lg text-red-800 hover:bg-red-800 hover:text-white"
- %> |
-  <%= link_to 'Back', todo_lists_path,class:"border-green-800 border-2 px-4 transition duration-500 rounded-lg text-green-800 hover:bg-green-800 hover:text-white" %>
-</div>
-</div>
+	<div class="w-1/3 m-2 flex justify-around">
+				<%= link_to 'Edit', edit_todo_list_path(@todo_list),class:"border-blue-800 border-2 px-4 transition duration-500 rounded-lg text-blue-800 hover:bg-blue-800 hover:text-white" %> 
+				<%= link_to 'Delete', todo_list_path(@todo_list), method: :delete, data: { confirm: "Are you sure?" },class:"border-red-800 border-2 px-4 transition duration-500 rounded-lg text-red-800 hover:bg-red-800 hover:text-white"
+			%> 
+			<%= link_to 'Back', todo_lists_path,class:"border-green-800 border-2 px-4 transition duration-500 rounded-lg text-green-800 hover:bg-green-800 hover:text-white" %>
+	</div>
 
 </div>
+

@@ -1,23 +1,19 @@
 <div class="flex flex-col h-screen w-full justify-center items-center ">
-<div>
-  <h1 class="text-grey-darkest">Todo List Application</h1>
-<div class="links">
-    <%= link_to "Add Todo", new_todo_list_path %>
-</div>
-<div class="w-1/2 border h-2/3" >
-  <% @todo_lists.each do |todo_list| %>
-  <div class="flex mb-2 items-center">
-                <p class="w-full"><%= link_to todo_list.title, todo_list %></p>
-                <%
-=begin%>
- <p class="todo_list_sub_title"><%= todo_list.description %></p> 
-<%
-=end%>          
-         
-  </div>
-    
-  <% end %> 
-</div>
-</div>
+    <div class=" w-full h-5/6 flex flex-col items-center">
+        <h1 class="text-gray-700 text-xl font-bold">Todo List Application</h1>
 
+        <div class="m-2 p-2 w-32 border-2 text-white text-center bg-[#900C3F] rounded-full hover:bg-[#A40F48]">
+            <%= link_to "Add Todo List", new_todo_list_path %>
+        </div>
+        <div class="w-1/2 cursor-pointer h-2/3 flex justify-center" >
+          <% @todo_lists.each do |todo_list| %>
+             <%= link_to todo_list do %>
+                <div class="transition duration-500 flex flex-col mb-2 items-center rounded-lg hover:shadow-lg justify-center w-3/4 m-2 border-2 border-teal-300 h-1/3">
+                    <p class="text-xl font-bold"><%= link_to todo_list.title, todo_list %></p>
+                    <p class="text-gray-400 font-semibold"><%= todo_list.description %></p>               
+                </div>
+             <% end %> 
+          <% end %> 
+        </div>
+    </div>
 </div>

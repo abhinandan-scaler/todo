@@ -1,5 +1,5 @@
 
-<%= form_for([@todo_list, @todo_list.todo_items.build],:html=>{:style=>'width:66vw;display:flex;justify-content:space-between;'})  do |f| %>
-	<%= f.text_field :content, placeholder: "Add New Todo",class:'p-2 w-2/3 outline-none border-b-2 border-bg-gray-300' %>
-	<%= f.submit class:'w-1/5 cursor-pointer text-white bg-blue-800 p-4 rounded-full transition duration-500 hover:-translate-y-1' %>
+<%= form_for([@todo_list, @todo_list.todo_items.build],:html=>{:style=>'width:66vw;display:flex;justify-content:space-between;	'})  do |f| %>
+	<%= f.text_field :content, placeholder: "Add New Todo",class:'p-2 w-2/3 outline-none border-b-2 border-bg-gray-300 transition duration-500 hover:border-2 hover:border-teal-400 ' %>
+	<%= f.submit class:'w-1/5 cursor-pointer text-white bg-blue-800 p-4 rounded-full transition duration-500 hover:-translate-y-1 ' %>
 <% end %>

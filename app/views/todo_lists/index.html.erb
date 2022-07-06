@@ -1,14 +1,23 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Todo lists</h1>
-
-<div id="todo_lists">
+<div class="flex flex-col h-screen w-full justify-center items-center ">
+<div>
+  <h1 class="text-grey-darkest">Todo List Application</h1>
+<div class="links">
+    <%= link_to "Add Todo", new_todo_list_path %>
+</div>
+<div class="w-1/2 border h-2/3" >
   <% @todo_lists.each do |todo_list| %>
-    <%= render todo_list %>
-    <p>
-      <%= link_to "Show this todo list", todo_list %>
-    </p>
-  <% end %>
+  <div class="flex mb-2 items-center">
+                <p class="w-full"><%= link_to todo_list.title, todo_list %></p>
+                <%
+=begin%>
+ <p class="todo_list_sub_title"><%= todo_list.description %></p> 
+<%
+=end%>          
+         
+  </div>
+    
+  <% end %> 
+</div>
 </div>
 
-<%= link_to "New todo list", new_todo_list_path %>
+</div>

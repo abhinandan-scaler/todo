@@ -22,3 +22,4 @@
 #### Technologies Used
 - Ruby on Rails
 - Tailwind CSS
+- SCSS
